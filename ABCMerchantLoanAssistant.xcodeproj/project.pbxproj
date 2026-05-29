@@ -18,15 +18,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A1234567890123456789013 /* ABCMerchantLoanAssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCMerchantLoanAssistantApp.swift; sourceTree = "<group>"; };
-		2A1234567890123456789015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2A1234567890123456789017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A1234567890123456789013 /* ABCMerchantLoanAssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ABCMerchantLoanAssistantApp.swift; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/ABCMerchantLoanAssistantApp.swift; sourceTree = "<group>"; };
+		2A1234567890123456789015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/ContentView.swift; sourceTree = "<group>"; };
+		2A1234567890123456789017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/Assets.xcassets; sourceTree = "<group>"; };
 		2A1234567890123456789018 /* ABCMerchantLoanAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCMerchantLoanAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A1234567890123456789022 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		2A1234567890123456789024 /* CustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModel.swift; sourceTree = "<group>"; };
-		2A1234567890123456789026 /* OCRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRManager.swift; sourceTree = "<group>"; };
-		2A1234567890123456789028 /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
-		2A1234567890123456789030 /* OCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRView.swift; sourceTree = "<group>"; };
+		2A1234567890123456789022 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/Models/Customer.swift; sourceTree = "<group>"; };
+		2A1234567890123456789024 /* CustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomerViewModel.swift; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/Models/CustomerViewModel.swift; sourceTree = "<group>"; };
+		2A1234567890123456789026 /* OCRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OCRManager.swift; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/Utilities/OCRManager.swift; sourceTree = "<group>"; };
+		2A1234567890123456789028 /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DocumentPickerView.swift; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/Views/DocumentPickerView.swift; sourceTree = "<group>"; };
+		2A1234567890123456789030 /* OCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OCRView.swift; path = ABCMerchantLoanAssistant/ABCMerchantLoanAssistant/Views/OCRView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 				2A1234567890123456789036 /* Utilities */,
 				2A1234567890123456789017 /* Assets.xcassets */,
 			);
-			path = ABCMerchantLoanAssistant;
+			name = ABCMerchantLoanAssistant;
 			sourceTree = "<group>";
 		};
 		2A1234567890123456789034 /* Models */ = {
@@ -67,7 +67,7 @@
 				2A1234567890123456789022 /* Customer.swift */,
 				2A1234567890123456789024 /* CustomerViewModel.swift */,
 			);
-			path = Models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		2A1234567890123456789035 /* Views */ = {
@@ -76,7 +76,7 @@
 				2A1234567890123456789028 /* DocumentPickerView.swift */,
 				2A1234567890123456789030 /* OCRView.swift */,
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		2A1234567890123456789036 /* Utilities */ = {
@@ -84,7 +84,7 @@
 			children = (
 				2A1234567890123456789026 /* OCRManager.swift */,
 			);
-			path = Utilities;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		2A1234567890123456789033 /* Products */ = {
