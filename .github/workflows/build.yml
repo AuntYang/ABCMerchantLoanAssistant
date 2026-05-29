@@ -1,0 +1,66 @@
+name: Build iOS App
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Select Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_15.0.app
+      
+    - name: Build for iOS
+      run: |
+        xcodebuild clean build \
+          -project ABCMerchantLoanAssistant.xcodeproj \
+          -scheme ABCMerchantLoanAssistant \
+          -configuration Release \
+          -sdk iphoneos \
+          -derivedDataPath build \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO
+      
+    - name: Create IPA
+      run: |
+        mkdir -p Payload
+        cp -r build/Build/Products/Release-iphoneos/ABCMerchantLoanAssistant.app Payload/
+        zip -r ABCMerchantLoanAssistant.ipa Payload/
+      
+    - name: Upload IPA artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ABCMerchantLoanAssistant
+        path: ABCMerchantLoanAssistant.ipa
+        retention-days: 30
+        
+    - name: Upload to GitHub Release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ABCMerchantLoanAssistant.ipa
+        tag_name: build-${{ github.run_number }}
+        name: Build ${{ github.run_number }}
+        body: |
+          ABC商户贷助手 iOS App Build
+          
+          这个版本可以直接通过Sideloadly安装到iOS设备上使用。
+          
+          安装方法：
+          1. 下载ABCMerchantLoanAssistant.ipa
+          2. 打开Sideloadly
+          3. 连接你的iOS设备
+          4. 将IPA文件拖入Sideloadly
+          5. 输入你的Apple ID（用于签名）
+          6. 点击Start开始安装
+          
+          注意：免费Apple ID签名的应用程序有效期为7天，需要定期重新签名。
